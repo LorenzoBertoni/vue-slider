@@ -44,7 +44,7 @@
                             <!-- SENZA CICLO IN QUANTO RENDERIZZIAMO SOLO 1 IMMAGINE E UTILIZZIAMO IL VALORE DI CURRENT SLIDE PER NASCONDERE/MOSTRARE LE IMMAGINI -->
 
                         </div>
-                        <div class="my-thumbnails position-relative">
+                        <div class="my-thumbnails position-relative" @mouseover="stop" @mouseleave="play">
 
                             <div v-for="(image, index) in images" :class="(index == activeSlide)?'active':'' " @click="choose(index)" class="my-thumbnail">
                                 <img class="img-fluid" :src="image.url" :alt=" 'Thumbnail of ' +  images[activeSlide].title">
