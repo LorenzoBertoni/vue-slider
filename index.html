@@ -34,7 +34,7 @@
                         <div class="my-carousel-images">
 
                             <!-- SENZA CICLO IN QUANTO RENDERIZZIAMO SOLO 1 IMMAGINE E UTILIZZIAMO IL VALORE DI CURRENT SLIDE PER NASCONDERE/MOSTRARE LE IMMAGINI -->
-                            <div class="my-carousel-item active">
+                            <div class="my-carousel-item active" @mouseover="stop" @mouseleave="play">
                                 <img class="img-fluid" :src="images[activeSlide].url" :alt="images[activeSlide].title">
                                 <div class="item-description px-3">
                                     <h2>{{images[activeSlide].title}}</h2>

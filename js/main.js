@@ -1,7 +1,13 @@
 const app = new Vue({
     el: '#app',
+
+    mounted() {
+        this.play();
+    },
+
     data: {
         activeSlide: 0,
+        autoPlay: undefined,
         images: [
             {
                 url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -32,6 +38,7 @@ const app = new Vue({
             },
         ]
     },
+
     methods: {
         next () {
             if (this.activeSlide == this.images.length - 1) {
@@ -49,6 +56,12 @@ const app = new Vue({
         },
         choose (index) {
             this.activeSlide = index;
+        },
+        play(){
+            this.autoPlay = setInterval(this.next, 3000);
+        },
+        stop () {
+            clearInterval(this.autoPlay);
         }
     }
 });
