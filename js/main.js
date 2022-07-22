@@ -46,6 +46,9 @@ const app = new Vue({
             } else {
                 this.activeSlide--;
             }
+        },
+        choose (index) {
+            this.activeSlide = index;
         }
     }
 });
