@@ -62,7 +62,22 @@ const app = new Vue({
         },
         stop () {
             clearInterval(this.autoPlay);
+        },
+        arrow () {
+            document.addEventListener('keydown', (e) => {
+                e = e || window.event;
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    this.prev();
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    this.next();
+                }
+            })
         }
+    },
+    mounted () {
+        this.arrow();
     }
 });
 
